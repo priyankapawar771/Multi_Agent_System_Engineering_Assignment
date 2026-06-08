@@ -1,0 +1,1 @@
+{"incident_id":"INC-003","severity":"medium","service":"payment-gateway","error":"Elevated 503 rate post-recovery","affected_users":210,"region":"ap-south-1"}

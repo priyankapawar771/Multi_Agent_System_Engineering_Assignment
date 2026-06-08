@@ -1,0 +1,1 @@
+{"incident_id":"INC-001","severity":"critical","service":"payment-gateway","error":"DB connection pool exhausted","affected_users":2340,"region":"ap-south-1"}

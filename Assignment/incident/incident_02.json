@@ -1,0 +1,1 @@
+{"incident_id":"INC-002","severity":"high","service":"user-auth","error":"JWT key rotation failed","affected_users":450,"region":"us-east-1"}
