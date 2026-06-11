@@ -10,6 +10,9 @@ from fastapi import FastAPI, HTTPException
 from langgraph.graph import END, START, StateGraph
 from openai import AsyncOpenAI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 logging.basicConfig(

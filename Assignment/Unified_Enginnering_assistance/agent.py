@@ -8,13 +8,17 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
 from pydantic import BaseModel
 
-from Multi_Agent_System_Engineering_Assignment.Assignment.Unified_Enginnering_assistance.mcp_server import (
+from mcp_server import (
     add_session_entry,
     format_session_history,
     run_db_query,
     run_rag_search,
     session_store,
 )
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 class AssistantState(TypedDict, total=False):
@@ -30,8 +34,8 @@ class RouteDecision(BaseModel):
     route: Literal["rag", "db", "memory", "FINISH"]
 
 
-router_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
-answer_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+router_llm = ChatOpenAI(model="gpt-4.1", temperature=0, base_url="https://us.api.openai.com/v1")
+answer_llm = ChatOpenAI(model="gpt-4.1", temperature=0, base_url="https://us.api.openai.com/v1")
 
 
 def compact_summary(text: str, limit: int = 160) -> str:

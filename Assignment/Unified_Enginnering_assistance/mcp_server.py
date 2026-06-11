@@ -31,7 +31,7 @@ def require_api_key() -> None:
 @lru_cache(maxsize=1)
 def get_embeddings() -> OpenAIEmbeddings:
     require_api_key()
-    return OpenAIEmbeddings(model="text-embedding-3-large")
+    return OpenAIEmbeddings(model="text-embedding-3-large", base_url="https://us.api.openai.com/v1")
 
 
 @lru_cache(maxsize=1)
@@ -46,7 +46,7 @@ def get_vectorstore() -> FAISS:
 @lru_cache(maxsize=1)
 def get_sql_agent():
     require_api_key()
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+    llm = ChatOpenAI(model="gpt-4.1", temperature=0, base_url="https://us.api.openai.com/v1")
     db = SQLDatabase.from_uri("sqlite:///project_management.db")
     toolkit = SQLDatabaseToolkit(db=db, llm=llm)
     return create_sql_agent(llm=llm, toolkit=toolkit, verbose=False)

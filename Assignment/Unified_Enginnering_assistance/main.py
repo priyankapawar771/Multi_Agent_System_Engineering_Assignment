@@ -2,7 +2,7 @@
 # filename: main.py
 from __future__ import annotations
 
-from Multi_Agent_System_Engineering_Assignment.Assignment.Unified_Enginnering_assistance.agent import build_graph, run_turn
+from agent import build_graph, run_turn
 
 
 REQUIRED_TEST_QUERIES = [

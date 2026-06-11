@@ -8,6 +8,9 @@ from typing import Dict, Literal
 from fastapi import FastAPI, HTTPException
 from openai import AsyncOpenAI
 from pydantic import BaseModel
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 logging.basicConfig(
